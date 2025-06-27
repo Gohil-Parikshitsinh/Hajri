@@ -1,42 +1,25 @@
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
-const isAuthenticated = async (req, res, next) => {
+exports.isAuthenticated = async (req, res, next) => {
+  const token = req.cookies.token;
+  if (!token) return res.redirect('/auth/login');
+
   try {
-    const token = req.cookies.token; // or req.headers['authorization']
-
-    if (!token) {
-      return res.redirect('/auth/login'); // Or res.status(401).send("Not authorized")
-    }
-
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-
-    const user = await User.findById(decoded.id);
-
-    if (!user) {
-      return res.status(404).send('User not found');
-    }
-
-    req.user = user; // attach to request object
+    req.user = await User.findById(decoded.userId);
     next();
   } catch (err) {
-    console.error(err);
-    return res.status(401).send('Invalid token');
+    console.log('JWT error:', err);
+    return res.redirect('/auth/login');
   }
 };
 
-// Role-based middleware
-const checkRole = (role) => {
+exports.checkRole = (roles) => {
   return (req, res, next) => {
-    if (req.user && req.user.role === role) {
-      return next();
-    } else {
-      return res.status(403).send('Forbidden: Access Denied');
+    if (!req.user || !roles.includes(req.user.role)) {
+      return res.status(403).send('Access denied');
     }
+    next();
   };
-};
-
-module.exports = {
-  isAuthenticated,
-  checkRole,
 };
