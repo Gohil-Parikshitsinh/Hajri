@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+</head>
+<body>
+  <h1>Welcome, <%= user.fullName %></h1>
+  <p>Your role is: <%= user.role %></p>
+
+  <% if (user.role === 'admin') { %>
+    <a href="/admin">Go to Admin Panel</a>
+  <% } %>
+
+  <% if (user.role === 'hr') { %>
+    <a href="/attendance">Mark Attendance</a>
+  <% } %>
+
+  <% if (user.role === 'employee') { %>
+    <a href="/payslip">View Payslip</a>
+  <% } %>
+</body>
+</html>
