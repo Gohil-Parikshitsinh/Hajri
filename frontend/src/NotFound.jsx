@@ -12,7 +12,7 @@ function NotFoundPage() {
   }, [navigate]);
 
   return (
-    <div className="min-h-screen bg-[#f9f9f9] dark:bg-[#1e1e1e] flex flex-col items-center justify-center text-center p-6">
+    <div className="min-h-screen min-w-screen bg-[#f9f9f9] dark:bg-[#1e1e1e] flex flex-col items-center justify-center text-center p-6">
       <h1 className="text-6xl font-bold text-[#2684FF]">404</h1>
       <p className="mt-4 text-xl text-[#555] dark:text-[#aaa]">
         Oops! Page not found.
