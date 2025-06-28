@@ -5,6 +5,8 @@ const cookies = require("cookie-parser");
 const session = require("express-session");
 const cors = require("cors");
 const jwt = require("jsonwebtoken");
+const isAuthenticated = require("./middleware/authMiddleware");
+
 require("dotenv").config();
 
 const User = require("./models/User"); // ✅ Adjust path as needed
@@ -81,6 +83,8 @@ app.get("/auth/logout", (req, res) => {
   });
 });
 
+app.use("/api", isAuthenticated); 
+
 // Get current user from session
 app.get("/api/current-user", (req, res) => {
   if (req.session && req.session.user) {
@@ -89,6 +93,8 @@ app.get("/api/current-user", (req, res) => {
     res.status(401).json({ message: "Not logged in" });
   }
 });
+
+
 
 // Sample dashboard route
 app.get("/dashboard", (req, res) => {
