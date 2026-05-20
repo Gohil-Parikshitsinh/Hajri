@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard - PayrollPro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="header-left">
+                <h1 class="logo">PayrollPro</h1>
+                <div class="role-badge employee">
+                    <span class="role-icon">👤</span>
+                    EMPLOYEE
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="user-info">
+                    <p class="user-name">Mike Employee</p>
+                    <p class="user-email">employee@company.com</p>
+                </div>
+                <div class="avatar">ME</div>
+                <button class="btn-logout" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </header>
+    
+    <main class="main-content">
+        <div class="dashboard-header">
+            <div>
+                <h2>Employee Dashboard</h2>
+                <p>View your payroll information and submit requests</p>
+            </div>
+            <div class="header-actions">
+                <button class="btn-outline">📄 Download Payslip</button>
+                <button class="btn-primary">📝 Request Leave</button>
+            </div>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-content">
+                    <div class="stat-info">
+                        <p class="stat-title">Current Salary</p>
+                        <p class="stat-value">$5,200</p>
+                    </div>
+                    <div class="stat-icon green">💰</div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-content">
+                    <div class="stat-info">
+                        <p class="stat-title">Leave Balance</p>
+                        <p class="stat-value">18 days</p>
+                    </div>
+                    <div class="stat-icon blue">📅</div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-content">
+                    <div class="stat-info">
+                        <p class="stat-title">Overtime Hours</p>
+                        <p class="stat-value">12</p>
+                    </div>
+                    <div class="stat-icon purple">⏰</div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-content">
+                    <div class="stat-info">
+                        <p class="stat-title">Department</p>
+                        <p class="stat-value">Engineering</p>
+                    </div>
+                    <div class="stat-icon orange">🏢</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="dashboard-grid">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Recent Payslips</h3>
+                    <p>Your latest salary information</p>
+                </div>
+                <div class="payslips">
+                    <div class="payslip-item">
+                        <div class="payslip-info">
+                            <p class="payslip-month">January 2024</p>
+                            <p class="payslip-amount">$5,200.00</p>
+                        </div>
+                        <button class="btn-sm">Download</button>
+                    </div>
+                    <div class="payslip-item">
+                        <div class="payslip-info">
+                            <p class="payslip-month">December 2023</p>
+                            <p class="payslip-amount">$5,200.00</p>
+                        </div>
+                        <button class="btn-sm">Download</button>
+                    </div>
+                    <div class="payslip-item">
+                        <div class="payslip-info">
+                            <p class="payslip-month">November 2023</p>
+                            <p class="payslip-amount">$5,200.00</p>
+                        </div>
+                        <button class="btn-sm">Download</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3>Leave Requests</h3>
+                    <p>Your submitted leave applications</p>
+                </div>
+                <div class="leave-requests">
+                    <div class="leave-item">
+                        <div class="leave-info">
+                            <p class="leave-dates">Jan 20-22, 2024</p>
+                            <p class="leave-type">Annual Leave</p>
+                            <p class="leave-reason">Personal vacation</p>
+                        </div>
+                        <span class="badge warning">pending</span>
+                    </div>
+                    <div class="leave-item">
+                        <div class="leave-info">
+                            <p class="leave-dates">Dec 25-26, 2023</p>
+                            <p class="leave-type">Holiday</p>
+                            <p class="leave-reason">Christmas break</p>
+                        </div>
+                        <span class="badge success">approved</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <h3>Quick Actions</h3>
+                <p>Common tasks and requests</p>
+            </div>
+            <div class="management-grid">
+                <button class="management-btn">
+                    <span class="management-icon">📝</span>
+                    Request Leave
+                </button>
+                <button class="management-btn">
+                    <span class="management-icon">⏰</span>
+                    Log Overtime
+                </button>
+                <button class="management-btn">
+                    <span class="management-icon">📄</span>
+                    View Payslips
+                </button>
+                <button class="management-btn">
+                    <span class="management-icon">👤</span>
+                    Update Profile
+                </button>
+            </div>
+        </div>
+    </main>
+    
+    <script src="auth.js"></script>
+</body>
+</html>

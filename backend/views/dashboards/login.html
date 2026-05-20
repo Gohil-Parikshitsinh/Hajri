@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayrollPro - Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-form">
+            <div class="logo-section">
+                <h1 class="logo">PayrollPro</h1>
+                <p class="tagline">Role-based Payroll Management System</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h2>Sign In</h2>
+                    <p>Choose your role and enter your credentials</p>
+                </div>
+                
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="role">Role</label>
+                        <select id="role" name="role" required>
+                            <option value="">Select your role</option>
+                            <option value="admin">Administrator</option>
+                            <option value="hr">HR Manager</option>
+                            <option value="employee">Employee</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">Sign In</button>
+                </form>
+                
+                <div class="demo-credentials">
+                    <p><strong>Demo Credentials:</strong></p>
+                    <p><strong>Admin:</strong> admin@company.com / password</p>
+                    <p><strong>HR:</strong> hr@company.com / password</p>
+                    <p><strong>Employee:</strong> employee@company.com / password</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="auth.js"></script>
+</body>
+</html>

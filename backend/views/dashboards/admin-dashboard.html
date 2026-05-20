@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - PayrollPro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="header-left">
+                <h1 class="logo">PayrollPro</h1>
+                <div class="role-badge admin">
+                    <span class="role-icon">🛡️</span>
+                    ADMIN
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="user-info">
+                    <p class="user-name">John Administrator</p>
+                    <p class="user-email">admin@company.com</p>
+                </div>
+                <div class="avatar">JA</div>
+                <button class="btn-logout" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </header>
+    
+    <main class="main-content">
+        <div class="dashboard-header">
+            <div>
+                <h2>Admin Dashboard</h2>
+                <p>Manage your organization's payroll and HR operations</p>
+            </div>
+            <div class="header-actions">
+                <button class="btn-outline">📄 Reports</button>
+                <button class="btn-primary">👤 Add Employee</button>
+            </div>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-content">
+                    <div class="stat-info">
+                        <p class="stat-title">Total Employees</p>
+                        <p class="stat-value">247</p>
+                        <span class="stat-change positive">+12%</span>
+                    </div>
+                    <div class="stat-icon blue">👥</div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-content">
+                    <div class="stat-info">
+                        <p class="stat-title">Monthly Payroll</p>
+                        <p class="stat-value">$1.2M</p>
+                        <span class="stat-change positive">+8%</span>
+                    </div>
+                    <div class="stat-icon green">💰</div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-content">
+                    <div class="stat-info">
+                        <p class="stat-title">Departments</p>
+                        <p class="stat-value">12</p>
+                        <span class="stat-change positive">+2</span>
+                    </div>
+                    <div class="stat-icon purple">📈</div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-content">
+                    <div class="stat-info">
+                        <p class="stat-title">Pending Actions</p>
+                        <p class="stat-value">8</p>
+                        <span class="stat-change negative">-3</span>
+                    </div>
+                    <div class="stat-icon orange">⚠️</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="dashboard-grid">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Quick Actions</h3>
+                    <p>Common administrative tasks</p>
+                </div>
+                <div class="quick-actions">
+                    <button class="action-btn">👥 Employee Management</button>
+                    <button class="action-btn">💰 Payroll Processing</button>
+                    <button class="action-btn">📄 Generate Reports</button>
+                    <button class="action-btn">⚙️ System Settings</button>
+                </div>
+            </div>
+            
+            <div class="card activity-card">
+                <div class="card-header">
+                    <h3>Recent Activities</h3>
+                    <p>Latest system activities and updates</p>
+                </div>
+                <div class="activities">
+                    <div class="activity-item">
+                        <div class="activity-dot success"></div>
+                        <div class="activity-content">
+                            <p class="activity-title">New employee onboarded</p>
+                            <p class="activity-subtitle">by Sarah Johnson • 2 hours ago</p>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-dot info"></div>
+                        <div class="activity-content">
+                            <p class="activity-title">Payroll processed for Marketing</p>
+                            <p class="activity-subtitle">by System • 4 hours ago</p>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-dot success"></div>
+                        <div class="activity-content">
+                            <p class="activity-title">Leave approved for John Doe</p>
+                            <p class="activity-subtitle">by HR Manager • 1 day ago</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <h3>Department Overview</h3>
+                <p>Employee distribution and payroll by department</p>
+            </div>
+            <div class="department-grid">
+                <div class="department-card">
+                    <div class="department-header">
+                        <h4>Engineering</h4>
+                        <span class="badge blue">85 emp</span>
+                    </div>
+                    <p class="department-budget">$420K</p>
+                    <p class="department-label">Monthly budget</p>
+                </div>
+                <div class="department-card">
+                    <div class="department-header">
+                        <h4>Sales</h4>
+                        <span class="badge green">62 emp</span>
+                    </div>
+                    <p class="department-budget">$310K</p>
+                    <p class="department-label">Monthly budget</p>
+                </div>
+                <div class="department-card">
+                    <div class="department-header">
+                        <h4>Marketing</h4>
+                        <span class="badge purple">38 emp</span>
+                    </div>
+                    <p class="department-budget">$190K</p>
+                    <p class="department-label">Monthly budget</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="auth.js"></script>
+</body>
+</html>

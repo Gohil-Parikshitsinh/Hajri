@@ -72,13 +72,11 @@ app.post("/auth/login", async (req, res) => {
   req.session.user = {
     id: user._id,
     email: user.email,
+    fullName: user.fullName,
     role: user.role,
   };
 
   res.redirect("/dashboard");
-
-
-  
 });
 
 app.get("/dashboard",(req,res)=>{

@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Dashboard - PayrollPro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="header-left">
+                <h1 class="logo">PayrollPro</h1>
+                <div class="role-badge hr">
+                    <span class="role-icon">👥</span>
+                    HR
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="user-info">
+                    <p class="user-name">Sarah HR Manager</p>
+                    <p class="user-email">hr@company.com</p>
+                </div>
+                <div class="avatar">SH</div>
+                <button class="btn-logout" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </header>
+    
+    <main class="main-content">
+        <div class="dashboard-header">
+            <div>
+                <h2>HR Dashboard</h2>
+                <p>Manage employee relations and payroll operations</p>
+            </div>
+            <div class="header-actions">
+                <button class="btn-outline">📄 Employee Reports</button>
+                <button class="btn-primary">👥 Manage Employees</button>
+            </div>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-content">
+                    <div class="stat-info">
+                        <p class="stat-title">Active Employees</p>
+                        <p class="stat-value">247</p>
+                    </div>
+                    <div class="stat-icon blue">👥</div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-content">
+                    <div class="stat-info">
+                        <p class="stat-title">Pending Leaves</p>
+                        <p class="stat-value">12</p>
+                    </div>
+                    <div class="stat-icon orange">📅</div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-content">
+                    <div class="stat-info">
+                        <p class="stat-title">New Hires</p>
+                        <p class="stat-value">8</p>
+                    </div>
+                    <div class="stat-icon green">✅</div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-content">
+                    <div class="stat-info">
+                        <p class="stat-title">Overtime Hours</p>
+                        <p class="stat-value">145</p>
+                    </div>
+                    <div class="stat-icon purple">⏰</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="dashboard-grid">
+            <div class="card">
+                <div class="card-header">
+                    <h3>⚠️ Pending Approvals</h3>
+                    <p>Requests requiring your attention</p>
+                </div>
+                <div class="approvals">
+                    <div class="approval-item">
+                        <div class="approval-info">
+                            <p class="approval-title">Leave Request</p>
+                            <p class="approval-subtitle">John Doe • Engineering</p>
+                            <p class="approval-date">2024-01-15</p>
+                        </div>
+                        <div class="approval-actions">
+                            <span class="badge warning">pending</span>
+                            <button class="btn-sm">Review</button>
+                        </div>
+                    </div>
+                    <div class="approval-item">
+                        <div class="approval-info">
+                            <p class="approval-title">Overtime</p>
+                            <p class="approval-subtitle">Sarah Smith • Marketing</p>
+                            <p class="approval-date">2024-01-14</p>
+                        </div>
+                        <div class="approval-actions">
+                            <span class="badge warning">pending</span>
+                            <button class="btn-sm">Review</button>
+                        </div>
+                    </div>
+                    <div class="approval-item">
+                        <div class="approval-info">
+                            <p class="approval-title">Leave Request</p>
+                            <p class="approval-subtitle">Mike Johnson • Sales</p>
+                            <p class="approval-date">2024-01-13</p>
+                        </div>
+                        <div class="approval-actions">
+                            <span class="badge urgent">urgent</span>
+                            <button class="btn-sm">Review</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3>Upcoming Payroll</h3>
+                    <p>Department payroll processing status</p>
+                </div>
+                <div class="payroll-items">
+                    <div class="payroll-item">
+                        <div class="payroll-header">
+                            <h4>Engineering</h4>
+                            <span class="badge success">ready</span>
+                        </div>
+                        <div class="payroll-details">
+                            <div class="payroll-stat">
+                                <p class="payroll-label">Employees</p>
+                                <p class="payroll-value">85</p>
+                            </div>
+                            <div class="payroll-stat">
+                                <p class="payroll-label">Amount</p>
+                                <p class="payroll-value">$420K</p>
+                            </div>
+                        </div>
+                        <p class="payroll-due">Due: 2024-01-31</p>
+                    </div>
+                    <div class="payroll-item">
+                        <div class="payroll-header">
+                            <h4>Sales</h4>
+                            <span class="badge info">processing</span>
+                        </div>
+                        <div class="payroll-details">
+                            <div class="payroll-stat">
+                                <p class="payroll-label">Employees</p>
+                                <p class="payroll-value">62</p>
+                            </div>
+                            <div class="payroll-stat">
+                                <p class="payroll-label">Amount</p>
+                                <p class="payroll-value">$310K</p>
+                            </div>
+                        </div>
+                        <p class="payroll-due">Due: 2024-01-31</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <h3>Employee Management</h3>
+                <p>Quick access to employee operations</p>
+            </div>
+            <div class="management-grid">
+                <button class="management-btn">
+                    <span class="management-icon">👥</span>
+                    View All Employees
+                </button>
+                <button class="management-btn">
+                    <span class="management-icon">✅</span>
+                    Onboard Employee
+                </button>
+                <button class="management-btn">
+                    <span class="management-icon">📅</span>
+                    Leave Management
+                </button>
+                <button class="management-btn">
+                    <span class="management-icon">⏰</span>
+                    Time Tracking
+                </button>
+            </div>
+        </div>
+    </main>
+    
+    <script src="auth.js"></script>
+</body>
+</html>

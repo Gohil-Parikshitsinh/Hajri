@@ -1,91 +1,83 @@
-<% layout("/layouts/boilerplate.ejs") %>
-  <style>
-    body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f8f9fa;
-      color: #333;
-    }
-    header {
-      background-color: #343a40;
-      color: white;
-      padding: 1rem 2rem;
-      text-align: center;
-    }
-    main {
-      padding: 2rem;
-    }
-    h1 {
-      margin-bottom: 1rem;
-    }
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-    }
-    .card {
-      background-color: #ffffff;
-      border-radius: 8px;
-      padding: 1.5rem;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-      transition: all 0.2s ease-in-out;
-    }
-    .card:hover {
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-    .card h3 {
-      margin-top: 0;
-    }
-    a.button {
-      display: inline-block;
-      margin-top: 0.5rem;
-      padding: 0.5rem 1rem;
-      background-color: #2684ff;
-      color: white;
-      border-radius: 4px;
-      text-decoration: none;
-      font-size: 0.9rem;
-    }
-    a.button:hover {
-      background-color: #1e6fcb;
-    }
-  </style>
-</head>
-<body>
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hajri Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 
-  <header>
-    <h1>Welcome, <%= user.fullName %> (Admin)</h1>
+  <!-- Hajri Color Scheme via CDN Tailwind config -->
+  
+
+</head>
+<body class="bg-white dark:bg-[#121212] text-[#111111] dark:text-[#f9f9f9] min-h-screen">
+
+  <!-- Header -->
+  <header class="p-4 border-b border-borderlight dark:border-borderdark bg-white dark:bg-[#121212]">
+    <h1 class="text-2xl font-semibold">📊 Hajri Dashboard</h1>
   </header>
 
-  <main>
-    <h2>Admin Panel</h2>
+  <!-- Main Content -->
+  <main class="p-6 space-y-6">
 
-    <div class="card-grid">
-      <div class="card">
-        <h3>Manage Employees</h3>
-        <p>Add, update, or remove employees from the system.</p>
-        <a href="/admin/employees" class="button">Manage</a>
+    <!-- Top Stat Cards -->
+    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Employees Card -->
+      <div class="bg-[#f9f9f9] dark:bg-[#1e1e1e] p-6 rounded-2xl shadow border border-borderlight dark:border-borderdark">
+        <div class="text-lg font-medium mb-2">👥 Employees</div>
+        <div class="text-3xl font-bold">128</div>
+        <div class="text-sm text-[#555] dark:text-[#aaa] mt-1">Active employees</div>
       </div>
 
-      <div class="card">
-        <h3>Attendance Overview</h3>
-        <p>View and track attendance of employees.</p>
-        <a href="/admin/attendance" class="button">View</a>
+      <!-- Salary Card -->
+      <div class="bg-[#f9f9f9] dark:bg-[#1e1e1e] p-6 rounded-2xl shadow border border-borderlight dark:border-borderdark">
+        <div class="text-lg font-medium mb-2">💸 Total Salary Paid</div>
+        <div class="text-3xl font-bold">₹12,40,000</div>
+        <div class="text-sm text-[#555] dark:text-[#aaa] mt-1">Till this month</div>
       </div>
 
-      <div class="card">
-        <h3>Leaves Management</h3>
-        <p>Approve or reject leave requests.</p>
-        <a href="/admin/leaves" class="button">Manage</a>
+      <!-- Next Payout -->
+      <div class="bg-[#f9f9f9] dark:bg-[#1e1e1e] p-6 rounded-2xl shadow border border-borderlight dark:border-borderdark">
+        <div class="text-lg font-medium mb-2">🗓️ Next Payout</div>
+        <div class="text-3xl font-bold">07 July, 2025</div>
+        <div class="text-sm text-[#555] dark:text-[#aaa] mt-1">Scheduled date</div>
+      </div>
+    </section>
+
+    <!-- Lower Grid -->
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+      <!-- Recent Attendance -->
+      <div class="bg-[#f9f9f9] dark:bg-[#1e1e1e] p-6 rounded-2xl shadow border border-borderlight dark:border-borderdark">
+        <h2 class="text-xl font-semibold mb-4">📅 Recent Attendance</h2>
+        <ul class="space-y-2 text-sm">
+          <li class="flex justify-between">
+            <span>Parth Patel</span>
+            <span class="text-green-600">Present</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Meera Shah</span>
+            <span class="text-red-600">Absent</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Amit Joshi</span>
+            <span class="text-green-600">Present</span>
+          </li>
+        </ul>
       </div>
 
-      <div class="card">
-        <h3>Payroll</h3>
-        <p>Generate and manage salaries and payslips.</p>
-        <a href="/admin/payroll" class="button">Manage</a>
+      <!-- Quick Actions -->
+      <div class="bg-[#f9f9f9] dark:bg-[#1e1e1e] p-6 rounded-2xl shadow border border-borderlight dark:border-borderdark">
+        <h2 class="text-xl font-semibold mb-4">⚡ Quick Actions</h2>
+        <div class="flex flex-wrap gap-4">
+          <button class="bg-[#2684FF] text-white hover:bg-[#1e6fcb] px-4 py-2 rounded-xl">➕ Add Employee</button>
+          <button class="bg-[#2684FF] text-white hover:bg-[#1e6fcb] px-4 py-2 rounded-xl">📤 Generate Payslip</button>
+          <button class="bg-[#2684FF] text-white hover:bg-[#1e6fcb] px-4 py-2 rounded-xl">📁 Download Report</button>
+        </div>
       </div>
-    </div>
+
+    </section>
+
   </main>
 
 </body>

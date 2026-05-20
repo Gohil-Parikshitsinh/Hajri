@@ -1,24 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karya</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hajri Dashboard</title>
+
+  <!-- Tailwind Config (Hajri Color Scheme) -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2684FF',
+            'primary-hover': '#1e6fcb',
+            surface: '#f9f9f9',
+            'surface-dark': '#1e1e1e',
+            borderlight: '#e0e0e0',
+            borderdark: '#2a2a2a',
+            textlight: '#111111',
+            textdark: '#f9f9f9'
+          }
+        }
+      }
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <%- include("../includes/navbar.ejs") %>
-    <!-- <div class="container"> -->
+<body class="bg-white dark:bg-[#121212] text-[#111111] dark:text-[#f9f9f9] min-h-screen">
+
+  <!-- Wrapper for sidebar + content -->
+  <div class="flex min-h-screen overflow-hidden">
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="fixed lg:relative z-40 lg:z-auto top-0 left-0 h-full w-64 bg-[#f9f9f9] dark:bg-[#1e1e1e] border-r border-borderlight dark:border-borderdark transform -translate-x-full lg:translate-x-0 transition-transform duration-300">
+      <div class="flex items-center justify-between p-4 border-b border-borderlight dark:border-borderdark">
+        <h2 class="text-lg font-bold">Menu</h2>
+        <button id="closeSidebar" class="text-xl lg:hidden">&times;</button>
+      </div>
+      <nav class="p-4 flex flex-col gap-4">
+        <a href="/dashboard" class="hover:bg-[#f0f0f0] dark:hover:bg-[#2f2f2f] p-2 rounded">Dashboard</a>
+        <a href="/attendance" class="hover:bg-[#f0f0f0] dark:hover:bg-[#2f2f2f] p-2 rounded">Attendance</a>
+        <a href="/employees" class="hover:bg-[#f0f0f0] dark:hover:bg-[#2f2f2f] p-2 rounded">Employees</a>
+        <a href="/reports" class="hover:bg-[#f0f0f0] dark:hover:bg-[#2f2f2f] p-2 rounded">Reports</a>
+        <a href="/logout" class="hover:bg-[#f0f0f0] dark:hover:bg-[#2f2f2f] p-2 rounded text-[#d73a49]">Logout</a>
+      </nav>
+    </aside>
+
+    <!-- Main content wrapper -->
+    <div id="mainContent" class="flex-1 flex flex-col transition-all duration-300 ml-0 lg:ml-64">
+
+      <!-- Header -->
+      <header class="p-4 border-b border-borderlight dark:border-borderdark bg-white dark:bg-[#121212] flex items-center justify-between">
+        <button id="openSidebar" class="text-2xl lg:hidden">&#9776;</button>
+        <h1 class="text-xl font-semibold">📊 Hajri Dashboard</h1>
+      </header>
+
+      <!-- Main body content -->
+      <main class="p-6">
         <%- body %>
-    <!-- </div> -->
-    
-    <!-- <%- include("../includes/footer.ejs") %> -->
-<!-- <script src="/public/js/script.js"></script> -->
+      </main>
+
+    </div>
+  </div>
+
+  <!-- Sidebar JS -->
+  <script>
+    const sidebar = document.getElementById('sidebar');
+    const openSidebar = document.getElementById('openSidebar');
+    const closeSidebar = document.getElementById('closeSidebar');
+    const mainContent = document.getElementById('mainContent');
+
+    openSidebar?.addEventListener('click', () => {
+      sidebar.classList.remove('-translate-x-full');
+    });
+
+    closeSidebar?.addEventListener('click', () => {
+      sidebar.classList.add('-translate-x-full');
+    });
+  </script>
 
 </body>
 </html>
